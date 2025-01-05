@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <head>
+        <title>portfolio</title>
+    </head>
+    <body>
+        <header>
+            <div>
+                <a href="home.html">Home</a>
+                <a href="C:\Users\shind\OneDrive\resume.docx">Resume</a>
+                <a href="project.html">Project</a>
+                <a href=>About</a>
+            </div>
+        </header>
+        
+            <h1 class="h1" id="typed"></h1>
+       
+            <script>
+                const text = " So Who I Am ?? ";
+                let typedTextId = document.getElementById('typed');
+                let index = 0;
+    
+                function typedText() {
+                    if (index < text.length ) {
+
+                        typedTextId.innerHTML += text[index];
+                        index++; 
+                      
+
+                        setTimeout(typedText, 400); 
+                    }
+                }
+    
+                setTimeout(typedText, 3000); 
+                typedText();
+            </script>
+
+<div class="about">
+    <p>
+        I’m a recent Bachelor of Computer Applications (BCA) graduate with practical experience in creating several websites and an app. I’m passionate about web
+         development, with skills in HTML, CSS, JavaScript, and various frameworks, as well as basic knowledge of mobile app development. I enjoy solving problems and paying close 
+         attention to detail, and I’m always eager to learn new technologies to keep improving my work. I take pride in delivering high-quality results on time and 
+         thrive on bringing creative solutions to life. I’m now looking for an opportunity where I can continue to grow, collaborate with a forward-thinking team, and 
+         contribute to meaningful projects in the IT industry.
+    </p>
+</div>
+
+<div class="skill"><br><br><br>
+    <h1>SKILLS</h1><br><br>
+    <div class="front">
+     <button>HTML</button>
+     <button>CSS</button>
+     <button>JAVASCRIPT</button>
+     <button>BOOTSTRAP</button>
+    </div><br><br>
+    <div class="back">
+     <button>SQL</button>
+     <button>JAVA</button>
+     <button>REACTJS</button>
+     <button>SPRING</button>
+    </div><br><br><br><br><br><br><br><br>
+</div>
+
+<button onclick="project()" class="pbutton">Click to See Projects</button>
+<div class="pdiv">
+<div class="project" id="b1" style="display: none;"> <p>project1</p></div>
+<div class="project1" id="b1" style="display: none;"> <p>project2</p></div>
+<div class="project2" id="b1" style="display: none;"> <p>project3</p> </div>
+</div>
+
+<script>
+    function project()
+    {
+        const button =document.querySelectorAll('.project,.project1,.project2');
+
+        button.forEach(function (project){
+           
+            project.style.display ='block';
+
+        });
+
+
+
+    }
+</script>
+       
+        <form class="contact" action="login.php" method="post"><br><br>
+            <h1>Contact Me</h1><br><br> 
+            <label>Full Name</label><br><br>
+            <input type="text" name="name" id="n" placeholder="Enter Name"><br><br>
+            <label>Email</label><br><br>
+            <input type="email" name="email" id="e" placeholder="Enter Email"><br><br>
+            <label>Contact No.</label><br><br>
+            <input type="text" name="phone" id="p" placeholder="Enter contact No."><br><br>
+            <label>Message</label><br><br>
+            <input type="text" name="message" id="m" placeholder="Enter Message."><br><br><br>
+            <button type="submit" name="name" id="b" onclick="About()">Submit</button><br><br><br> 
+        </form>
+        <script>
+            function About()
+            {
+                const name = document.getElementById('n').value;
+                const email = document.getElementById('e').value;
+                const contact = document.getElementById('p').value;
+                 
+            if(name != "" && email != "" && contact != "")
+            {
+                alert("Thank you !! and have a nice day ()-L-()");
+            }
+            else
+            {
+                alert(" please, fill the full form");
+            }
+            }
+        </script>
+    </body>
+    </html>
