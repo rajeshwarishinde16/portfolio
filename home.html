@@ -1,43 +1,23 @@
 <!DOCTYPE html>
-<html lang ="en">
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starry Night Sky</title>
     <link rel="stylesheet" href="style.css">
-    <head>
-        <title>portfolio</title>
-    </head>
-    <body>
-        
-        <header>
-            <div>
-                <a href="home.html">Home</a>
-                <a href="C:\Users\shind\OneDrive\resume.docx">Resume</a>
-                <a href="#pbutton">Project</a>
-                <a href="#typed">About</a>
-            </div>
-        </header>
-        
-            <h1 class="h1" id="typed"></h1>
-       
-            <script>
-                const text = " So Who I Am ?? ";
-                let typedTextId = document.getElementById('typed');
-                let index = 0;
-    
-                function typedText() {
-                    if (index < text.length ) {
+</head>
+<body>
+<div class="moon"></div>
 
-                        typedTextId.innerHTML += text[index];
-                        index++; 
-                      
+    <header>
+        
+            <a href="home.html">Home</a>
+            <a href="C:\Users\shind\OneDrive\resume.docx">Resume</a>
+            <a href="#pbutton">Project</a>
+            <a href="#typed">About</a>
+    </header>
 
-                        setTimeout(typedText, 400); 
-                    }
-                }
-    
-                setTimeout(typedText, 3000); 
-                typedText();
-            </script>
+    <h1 class="h1" id="typed"></h1><br><br>
 
 <div class="about">
     <p>
@@ -72,21 +52,6 @@
 <div class="project2" id="b1" style="display: none;"> <p>project3</p> </div>
 </div>
 
-<script>
-    function project()
-    {
-        const button =document.querySelectorAll('.project,.project1,.project2');
-
-        button.forEach(function (project){
-           
-            project.style.display ='block';
-
-        });
-
-
-
-    }
-</script>
        
         <form class="contact" action="login.php" method="post"><br><br>
             <h1>Contact Me</h1><br><br> 
@@ -100,24 +65,9 @@
             <input type="text" name="message" id="m" placeholder="Enter Message."><br><br><br>
             <button type="submit" name="name" id="b" onclick="About()">Submit</button><br><br><br> 
         </form>
-        <script>
-            function About()
-            {
-                const name = document.getElementById('n').value;
-                const email = document.getElementById('e').value;
-                const contact = document.getElementById('p').value;
-                 
-            if(name != "" && email != "" && contact != "")
-            {
-                alert("Thank you !! and have a nice day ()-L-()");
-            }
-            else
-            {
-                alert(" please, fill the full form");
-            }
-            }
-        </script>
+       
         </div>
-        
-    </body>
-    </html>
+<script src="script.js"></script>
+    
+</body>
+</html>
