@@ -30,7 +30,7 @@ body, html {
     100% { transform: translate(0, 0); }
 }
 
-/* Social Media Icons Container */
+
 .social-icons {
     position: absolute;
     bottom: 20px;
@@ -39,7 +39,6 @@ body, html {
     gap: 15px;
 }
 
-/* Common Styles for Icons */
 .icon {
     width: 50px;
     height: 50px;
@@ -48,7 +47,7 @@ body, html {
     transition: transform 0.3s ease;
 }
 
-/* Individual Icon Backgrounds */
+
 .instagram {
     background: url('https://cdn-icons-png.flaticon.com/512/2111/2111463.png') no-repeat center;
     background-size: cover;
@@ -69,12 +68,12 @@ body, html {
     background-size: cover;
 }
 
-/* Hover Effect */
+
 .icon:hover {
     transform: scale(1.2);
 }
 
-/* Shape Styles */
+
 .shape {
     position: absolute;
     animation: twinkle 3s infinite ease-in-out;
@@ -92,7 +91,7 @@ body, html {
 
 
 
-/* Social Media Icons Container */
+
 .social-icons {
     position: absolute;
     bottom: 20px;
@@ -101,7 +100,7 @@ body, html {
     gap: 15px;
 }
 
-/* Common Styles for Icons */
+
 .icon {
     width: 50px;
     height: 50px;
@@ -110,7 +109,7 @@ body, html {
     transition: transform 0.3s ease;
 }
 
-/* Shape Styles */
+
 .shape {
     position: absolute;
     animation: twinkle 3s infinite ease-in-out;
