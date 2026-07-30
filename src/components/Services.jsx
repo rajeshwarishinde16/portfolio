@@ -66,7 +66,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="w-24 h-1 bg-primary-gold mx-auto mb-12"
+            className="w-24 h-1 bg-[#6366f1] mx-auto mb-12"
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -83,9 +83,9 @@ const Services = () => {
                 <motion.div
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
-                  className="w-16 h-16 bg-primary-gold/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-gold/20 transition-colors"
+                  className="w-16 h-16 bg-[#6366f1]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#6366f1]/20 transition-colors"
                 >
-                  <service.icon className="w-8 h-8 text-primary-gold" />
+                  <service.icon className="w-8 h-8 text-[#6366f1]" />
                 </motion.div>
                 
                 <h3 className="text-xl font-bold mb-4 font-playfair">{service.title}</h3>
@@ -97,7 +97,7 @@ const Services = () => {
                   {service.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1 bg-primary-gold/10 text-primary-gold text-sm rounded-full"
+                      className="px-3 py-1 bg-[#6366f1]/10 text-[#6366f1] text-sm rounded-full"
                     >
                       {tech}
                     </span>

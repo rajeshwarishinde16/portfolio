@@ -10,10 +10,11 @@ export default {
         primary: {
           black: '#0a0a0a',
           white: '#ffffff',
-          beige: '#f5f0e8',
-          gold: '#d4af37',
-          goldLight: '#f4d03f',
-          gray: '#6b7280',
+          beige: '#f8f6f3',
+          accent: '#6366f1', // Indigo accent - more modern and subtle
+          accentLight: '#818cf8',
+          accentDark: '#4f46e5',
+          gray: '#64748b',
         },
       },
       fontFamily: {
@@ -24,11 +25,22 @@ export default {
         'float': 'float 6s ease-in-out infinite',
         'float-delayed': 'float 6s ease-in-out 3s infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'gradient-x': 'gradient-x 3s ease infinite',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },
+        },
+        'gradient-x': {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center'
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center'
+          },
         },
       },
     },

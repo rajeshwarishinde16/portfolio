@@ -10,7 +10,7 @@ import Testimonials from './components/Testimonials'
 import Experience from './components/Experience'
 import Achievements from './components/Achievements'
 import WhyChooseMe from './components/WhyChooseMe'
-// import Statistics from './components/Statistics'
+import Statistics from './components/Statistics'
 import CTA from './components/CTA'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -40,7 +40,7 @@ function App() {
       <Experience />
       <Achievements />
       <WhyChooseMe />
-      {/* <Statistics /> */}
+      <Statistics />
       <CTA />
       <Contact />
       <Footer />

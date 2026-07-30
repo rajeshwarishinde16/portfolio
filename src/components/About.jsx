@@ -13,7 +13,7 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="py-20 bg-primary-beige/30 dark:bg-primary-black/50">
+    <section id="about" className="py-20 bg-[#f8f6f3]/30 dark:bg-black/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -36,7 +36,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="w-24 h-1 bg-primary-gold mx-auto mb-12"
+            className="w-24 h-1 bg-[#6366f1] mx-auto mb-12"
           />
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -76,7 +76,7 @@ const About = () => {
                   transition={{ delay: 1 + index * 0.1 }}
                   className="glass p-6 rounded-2xl hover:scale-105 transition-transform duration-300"
                 >
-                  <item.icon className="w-10 h-10 text-primary-gold mb-4" />
+                  <item.icon className="w-10 h-10 text-[#6366f1] mb-4" />
                   <p className="font-medium">{item.text}</p>
                 </motion.div>
               ))}
