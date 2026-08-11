@@ -8,13 +8,10 @@ export default {
     extend: {
       colors: {
         primary: {
-          black: '#0a0a0a',
+          black: '#000000',
           white: '#ffffff',
-          beige: '#f8f6f3',
-          accent: '#6366f1', // Indigo accent - more modern and subtle
-          accentLight: '#818cf8',
-          accentDark: '#4f46e5',
-          gray: '#64748b',
+          gray: '#666666',
+          lightGray: '#f5f5f5',
         },
       },
       fontFamily: {

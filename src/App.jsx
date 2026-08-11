@@ -14,7 +14,6 @@ import Statistics from './components/Statistics'
 import CTA from './components/CTA'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import CursorGlow from './components/CursorGlow'
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -29,7 +28,6 @@ function App() {
 
   return (
     <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
-      <CursorGlow />
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Hero />
       <About />

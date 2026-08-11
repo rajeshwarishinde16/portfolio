@@ -16,10 +16,8 @@ const Navbar = ({ darkMode, setDarkMode }) => {
   }, [])
 
   const navLinks = [
-    { name: 'Home', to: 'hero' },
     { name: 'About', to: 'about' },
     { name: 'Services', to: 'services' },
-    { name: 'Skills', to: 'skills' },
     { name: 'Projects', to: 'projects' },
     { name: 'Contact', to: 'contact' },
   ]
@@ -30,8 +28,8 @@ const Navbar = ({ darkMode, setDarkMode }) => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'glass backdrop-blur-xl shadow-lg py-3'
-          : 'bg-transparent py-5'
+          ? 'bg-white/80 dark:bg-black/80 backdrop-blur-xl py-4 border-b border-gray-200 dark:border-gray-800'
+          : 'bg-transparent py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,52 +37,70 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-xl sm:text-2xl font-bold font-playfair"
+            whileHover={{ scale: 1.05 }}
+            className="text-xl sm:text-2xl font-bold"
           >
-            <span className="gradient-text">RS</span>
+            <Link to="hero" smooth={true} duration={500} className="cursor-pointer">
+              Rajeshwari Shinde
+            </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <Link
+              <motion.div
                 key={link.name}
-                to={link.to}
-                smooth={true}
-                duration={500}
-                className="text-sm font-medium hover:text-primary-gold transition-colors cursor-pointer"
+                whileHover={{ y: -2 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
-                {link.name}
-              </Link>
+                <Link
+                  to={link.to}
+                  smooth={true}
+                  duration={500}
+                  className="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-400 transition-colors cursor-pointer relative group"
+                >
+                  {link.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+              </motion.div>
             ))}
-            <button
+            <motion.button
+              whileHover={{ rotate: 15 }}
+              whileTap={{ scale: 0.9 }}
               onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-full hover:bg-primary-gold/10 transition-colors"
+              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             >
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-            <a
-              href="#contact"
-              className="px-6 py-2 bg-primary-gold text-white rounded-full hover:bg-primary-goldLight transition-colors font-medium"
-            >
-              Hire Me
-            </a>
+            </motion.button>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                to="contact"
+                smooth={true}
+                duration={500}
+                className="px-6 py-2 bg-black text-white dark:bg-white dark:text-black rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors font-medium shadow-lg hover:shadow-xl"
+              >
+                Get in touch
+              </Link>
+            </motion.div>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-4">
-            <button
+            <motion.button
+              whileHover={{ rotate: 15 }}
+              whileTap={{ scale: 0.9 }}
               onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-full hover:bg-primary-gold/10 transition-colors"
+              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             >
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              whileTap={{ scale: 0.9 }}
               onClick={() => setIsOpen(!isOpen)}
               className="p-2"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            </motion.button>
           </div>
         </div>
 
@@ -93,7 +109,8 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="md:hidden mt-4 pb-4 glass rounded-2xl"
+            exit={{ opacity: 0, y: -20 }}
+            className="md:hidden mt-4 pb-4 bg-white dark:bg-black rounded-2xl border border-gray-200 dark:border-gray-800"
           >
             <div className="flex flex-col space-y-4 p-4">
               {navLinks.map((link) => (
@@ -103,17 +120,20 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                   smooth={true}
                   duration={500}
                   onClick={() => setIsOpen(false)}
-                  className="text-sm font-medium hover:text-primary-gold transition-colors cursor-pointer"
+                  className="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-400 transition-colors cursor-pointer"
                 >
                   {link.name}
                 </Link>
               ))}
-              <a
-                href="#contact"
-                className="px-6 py-2 bg-primary-gold text-white rounded-full hover:bg-primary-goldLight transition-colors font-medium text-center"
+              <Link
+                to="contact"
+                smooth={true}
+                duration={500}
+                onClick={() => setIsOpen(false)}
+                className="px-6 py-2 bg-black text-white dark:bg-white dark:text-black rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors font-medium text-center"
               >
-                Hire Me
-              </a>
+                Get in touch
+              </Link>
             </div>
           </motion.div>
         )}

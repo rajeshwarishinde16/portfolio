@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ExternalLink, Github, CheckCircle } from 'lucide-react'
+import { ExternalLink, Github, CheckCircle, ArrowUpRight } from 'lucide-react'
 
 const Projects = () => {
 
@@ -87,15 +87,39 @@ const Projects = () => {
             {projects.map((project, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5 + index * 0.1 }}
-                whileHover={{ scale: 1.03, y: -10 }}
-                className="glass rounded-2xl overflow-hidden group hover:shadow-2xl transition-all duration-300"
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="glass rounded-2xl overflow-hidden group cursor-pointer"
               >
-                <div className="h-48 bg-gradient-to-br from-primary-gold/20 to-primary-gold/5 flex items-center justify-center text-6xl">
-                  {project.image}
+                <div className="relative h-48 bg-gradient-to-br from-primary-gold/20 to-primary-gold/5 flex items-center justify-center text-6xl overflow-hidden">
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-primary-gold/30 to-primary-gold/10"
+                    initial={{ scale: 1 }}
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                  />
+                  <motion.div
+                    initial={{ scale: 1 }}
+                    whileHover={{ scale: 1.15, rotate: 5 }}
+                    transition={{ duration: 0.6 }}
+                    className="relative z-10"
+                  >
+                    {project.image}
+                  </motion.div>
+                  
+                  {/* Circular Arrow Button */}
+                  <motion.a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1, rotate: 0 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="absolute top-4 right-4 w-14 h-14 bg-black dark:bg-white text-white dark:text-black rounded-full flex items-center justify-center shadow-xl z-20 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                  >
+                    <ArrowUpRight size={24} />
+                  </motion.a>
                 </div>
                 
                 <div className="p-6">
